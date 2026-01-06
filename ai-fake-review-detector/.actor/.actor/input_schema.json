@@ -1,1 +1,25 @@
+{
+    "title": "AI Fake Review Detector",
+    "description": "Detect fake product reviews using AI-powered analysis",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "reviews": {
+            "title": "Reviews to Analyze",
+            "type": "array",
+            "description": "Enter reviews to analyze",
+            "editor": "json",
+            "prefill": [
+                {"text": "AMAZING!!! BEST PRODUCT!!!"},
+                {"text": "Good product. Works as described."}
+            ]
+        },
+        "maxReviews": {
+            "title": "Maximum Reviews",
+            "type": "integer",
+            "description": "Maximum number of reviews to analyze",
+            "default": 50
+        }
+    }
+}
 
