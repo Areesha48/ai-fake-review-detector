@@ -1,0 +1,39 @@
+{
+    "title": "AI Fake Review Detector",
+    "description": "Detect fake product reviews using AI-powered analysis. Identify suspicious patterns, get trust scores, and make informed buying decisions.",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "productUrl": {
+            "title": "Product URL",
+            "type": "string",
+            "description": "URL of the product page to analyze reviews from (e.g., Amazon, eBay, or any e-commerce site)",
+            "editor": "textfield",
+            "prefill": ""
+        },
+        "reviews": {
+            "title": "Reviews (Manual Input)",
+            "type": "array",
+            "description": "Alternatively, paste reviews directly as an array of objects with 'text' field. Example: [{\"text\": \"Great product!\"}]",
+            "editor": "json",
+            "prefill": []
+        },
+        "openaiApiKey": {
+            "title": "OpenAI API Key",
+            "type": "string",
+            "description": "Your OpenAI API key for AI-powered analysis. If not provided, basic pattern detection will be used.",
+            "editor": "textfield",
+            "isSecret": true
+        },
+        "maxReviews": {
+            "title": "Maximum Reviews to Analyze",
+            "type": "integer",
+            "description": "Maximum number of reviews to analyze (to control costs)",
+            "default": 50,
+            "minimum": 5,
+            "maximum": 200,
+            "editor": "number"
+        }
+    },
+    "required": []
+}

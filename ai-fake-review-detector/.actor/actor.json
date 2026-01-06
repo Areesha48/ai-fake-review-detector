@@ -1,0 +1,21 @@
+{
+    "actorSpecification": 1,
+    "name": "ai-fake-review-detector",
+    "title": "AI Fake Review Detector",
+    "description": "Detect fake product reviews using AI. Analyze reviews from any e-commerce site, identify suspicious patterns, and get trust scores to make informed buying decisions.",
+    "version": "1.0.0",
+    "buildTag": "latest",
+    "meta": {
+        "categories": ["E-COMMERCE", "AI"],
+        "language": "javascript"
+    },
+    "input": "./input_schema.json",
+    "dockerfile": "./Dockerfile",
+    "storages": {
+        "dataset": {
+            "actorSpecification": 1,
+            "title": "Fake Review Analysis Results",
+            "description": "Contains the analysis results including trust scores, fake review percentages, and individual review verdicts."
+        }
+    }
+}

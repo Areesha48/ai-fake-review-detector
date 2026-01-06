@@ -1,0 +1,75 @@
+{
+    "actorSpecification": 1,
+    "title": "Fake Review Analysis Output",
+    "description": "Output schema for the AI Fake Review Detector",
+    "type": "object",
+    "properties": {
+        "productUrl": {
+            "type": "string",
+            "description": "The analyzed product URL"
+        },
+        "analyzedAt": {
+            "type": "string",
+            "description": "Timestamp of analysis"
+        },
+        "totalReviewsAnalyzed": {
+            "type": "integer",
+            "description": "Number of reviews analyzed"
+        },
+        "summary": {
+            "type": "object",
+            "description": "Summary of the analysis",
+            "properties": {
+                "totalReviews": {
+                    "type": "integer"
+                },
+                "fakeCount": {
+                    "type": "integer",
+                    "description": "Number of fake reviews detected"
+                },
+                "genuineCount": {
+                    "type": "integer",
+                    "description": "Number of genuine reviews"
+                },
+                "fakePercentage": {
+                    "type": "number",
+                    "description": "Percentage of fake reviews"
+                },
+                "trustScore": {
+                    "type": "number",
+                    "description": "Overall trust score (0-100)"
+                },
+                "suspiciousPatterns": {
+                    "type": "array",
+                    "description": "List of suspicious patterns found"
+                },
+                "buyerRecommendation": {
+                    "type": "string",
+                    "description": "Recommendation for buyers"
+                }
+            }
+        },
+        "reviews": {
+            "type": "array",
+            "description": "Individual review analysis",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "reviewNumber": {
+                        "type": "integer"
+                    },
+                    "verdict": {
+                        "type": "string",
+                        "enum": ["LIKELY FAKE", "LIKELY GENUINE", "FAKE", "GENUINE"]
+                    },
+                    "confidence": {
+                        "type": "number"
+                    },
+                    "reason": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}
